@@ -16,10 +16,14 @@ class CamerasController < ApplicationController
 
     # POST /cameras
     def create
-      @camera = Camera.new(camera_params)
+
+      @user = User.find(params[:user_id])
+      @camera = @user.cameras.build(camera_params)
       if @camera.save
+        puts "coming here"
         redirect_to @camera, notice: 'Camera was successfully created.'
       else
+        flash.now[:alert] = 'There was an error creating the camera.'
         render :new, alert: 'There was an error.'
       end
     end
@@ -49,6 +53,6 @@ class CamerasController < ApplicationController
     private
 
     def camera_params
-      params.require(:camera).permit(:brand, :model, :price, :condition)
+      params.require(:camera).permit(:model, :year, :price, :condition)
     end
   end

@@ -21,3 +21,12 @@
   </div>
 <% end %>
 <p><%= link_to 'Back', cameras_path %></p>
+<% if @camera.errors.any? %>
+  <div class="alert alert-danger">
+    <ul>
+      <% @camera.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>
