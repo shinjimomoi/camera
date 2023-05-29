@@ -1,0 +1,25 @@
+<h1>Camera</h1>
+<table>
+  <thead>
+    <tr>
+      <th>Model</th>
+      <th>Year</th>
+      <th>Condition</th>
+      <th>Price</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <%= puts @cameras %>
+    <% @cameras.each do |camera| %>
+      <tr>
+        <td><%= camera.model %></td>
+        <td><%= camera.year %></td>
+        <td><%= camera.condition %></td>
+        <td><%= camera.price %></td>
+        <td><%= link_to "View", camera %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<%= link_to "Add Camera", new_camera_path %>

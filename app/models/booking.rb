@@ -24,4 +24,3 @@ class Booking < ApplicationRecord
         errors.add(:base, "This camera is already booked for the selected dates.")
     end
 end
-  
