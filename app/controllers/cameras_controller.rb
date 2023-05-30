@@ -1,4 +1,5 @@
 class CamerasController < ApplicationController
+    before_action :authenticate_user!
     # GET /cameras
     def index
       @cameras = Camera.all
@@ -17,8 +18,7 @@ class CamerasController < ApplicationController
     # POST /cameras
     def create
 
-      @user = User.find(params[:user_id])
-      @camera = @user.cameras.build(camera_params)
+      @camera = current_user.cameras.build(camera_params)
       if @camera.save
         puts "coming here"
         redirect_to @camera, notice: 'Camera was successfully created.'
@@ -45,7 +45,7 @@ class CamerasController < ApplicationController
 
     # DELETE /cameras/:id
     def destroy
-      @camera = Camera.find(params[:id])
+      @camera = current_user.cameras.find(params[:id])
       @camera.destroy
       redirect_to cameras_url, notice: 'Camera was successfully destroyed.'
     end
@@ -53,6 +53,6 @@ class CamerasController < ApplicationController
     private
 
     def camera_params
-      params.require(:camera).permit(:model, :year, :price, :condition)
+      params.require(:camera).permit(:brand, :model, :year, :price, :condition, :user_id)
     end
   end

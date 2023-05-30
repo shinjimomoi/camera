@@ -1,0 +1,8 @@
+<h1>Cameras Home</h1>
+<p><%=@message%></p>
+<p><%=if user_signed_in?
+    current_user # Returns the currently signed-in user object
+  else
+    "not signed in"
+  end  %>
+</p>
