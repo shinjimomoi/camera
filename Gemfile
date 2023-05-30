@@ -31,6 +31,10 @@ gem "pry-rails"
 
 gem "devise"
 
+gem 'react-rails'
+
+gem 'webpacker'
+
 # Use Redis adapter to run Action Cable in production
 # gem "redis", "~> 4.0"
 
