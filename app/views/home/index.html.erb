@@ -3,6 +3,8 @@
   <% if user_signed_in? %>
     <div id="react-container" data-data="<%= { message: @message, user: current_user}.to_json %>"></div>
     <%= link_to 'Sign out', destroy_user_session_path, method: :delete %>
+    <%= link_to 'Cameras', cameras_path, method: :get %>
+    <%= link_to 'Sign out', destroy_user_session_path, method: :delete %>
   <% else %>
     not signed in
     <%= link_to 'Sign in', user_session_path, method: :post %>

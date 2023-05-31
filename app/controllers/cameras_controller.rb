@@ -3,6 +3,7 @@ class CamerasController < ApplicationController
     # GET /cameras
     def index
       @cameras = Camera.all
+      @my_cameras = current_user.cameras
     end
 
     # GET /cameras/:id

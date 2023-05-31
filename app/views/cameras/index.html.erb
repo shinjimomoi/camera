@@ -1,4 +1,4 @@
-<h1>Camera</h1>
+<h1>Cameras</h1>
 <table>
   <thead>
     <tr>
@@ -10,7 +10,9 @@
     </tr>
   </thead>
   <tbody>
-    <%= puts @cameras %>
+    <%= puts @cameras, "all cameras" %>
+    <%= puts @my_cameras, "my cameras"%>
+
     <% @cameras.each do |camera| %>
       <tr>
         <td><%= camera.model %></td>
