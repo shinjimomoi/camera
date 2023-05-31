@@ -12,6 +12,7 @@
   <tbody>
     <%= puts @cameras, "all cameras" %>
     <%= puts @my_cameras, "my cameras"%>
+    <%= puts @current_user, "current user"%>
 
     <% @cameras.each do |camera| %>
       <tr>
@@ -21,6 +22,17 @@
         <td><%= camera.price %></td>
         <td><%= link_to "View", camera %></td>
       </tr>
+    <% end %>
+    <% if user_signed_in? %>
+      <% @my_cameras.each do |camera| %>
+        <tr>
+          <td><%= camera.model %></td>
+          <td><%= camera.year %></td>
+          <td><%= camera.condition %></td>
+          <td><%= camera.price %></td>
+          <td><%= link_to "View", camera %></td>
+        </tr>
+      <% end %>
     <% end %>
   </tbody>
 </table>
