@@ -2,8 +2,13 @@
 <p>
   <% if user_signed_in? %>
     <div id="react-container" data-data="<%= { message: @message, user: current_user}.to_json %>"></div>
+    <%= link_to 'Sign out', destroy_user_session_path, method: :delete %>
   <% else %>
     not signed in
+    <%= link_to 'Sign in', user_session_path, method: :post %>
+
+    <%= link_to 'Sign up', new_user_registration_path, method: :get %>
+
   <% end %>
 </p>
 
