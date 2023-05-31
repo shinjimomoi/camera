@@ -10,10 +10,8 @@
     </tr>
   </thead>
   <tbody>
-    <%= puts @cameras, "all cameras" %>
-    <%= puts @my_cameras, "my cameras"%>
-    <%= puts @current_user, "current user"%>
 
+      <h4>All Cameras</h4>
     <% @cameras.each do |camera| %>
       <tr>
         <td><%= camera.model %></td>
@@ -23,7 +21,22 @@
         <td><%= link_to "View", camera %></td>
       </tr>
     <% end %>
+  </tbody>
+</table>
+
     <% if user_signed_in? %>
+    <table>
+    <thead>
+      <tr>
+        <th>Model</th>
+        <th>Year</th>
+        <th>Condition</th>
+        <th>Price</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <h4>My Cameras</h4>
       <% @my_cameras.each do |camera| %>
         <tr>
           <td><%= camera.model %></td>

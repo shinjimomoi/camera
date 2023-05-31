@@ -1,5 +1,5 @@
 class CamerasController < ApplicationController
-    before_action :authenticate_user!, except: :index
+    before_action :authenticate_user!, except: [:index, :show]
     # GET /cameras
     def index
       @cameras = Camera.all
