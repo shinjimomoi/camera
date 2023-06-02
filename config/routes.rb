@@ -10,4 +10,5 @@ Rails.application.routes.draw do
 
   # Allow access to /cameras index route without authentication
   get '/cameras', to: 'cameras#index', constraints: { authenticated: false }
+  post '/bookings', to: 'bookings#create', as: 'create_booking'
 end

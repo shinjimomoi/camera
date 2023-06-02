@@ -14,7 +14,8 @@
       <tr>
         <td><%= booking.start_date %></td>
         <td><%= booking.end_date %></td>
-        <td><%= booking.condition %></td>
+        <td><%= booking.camera.model %></td>
+        <td><%= booking.camera.user.name %></td>
         <td><%= link_to "View", booking %></td>
       </tr>
     <% end %>
