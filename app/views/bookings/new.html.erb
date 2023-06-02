@@ -1,0 +1,28 @@
+<h1>New Booking</h1>
+<%= form_with(model: @booking) do |form| %>
+  <%= form.hidden_field :camera_id, value: @camera.id %>
+
+  <%= form.label :start_date, "Start Date" %>
+  <%= form.date_select :start_date, {
+    order: [:day, :month, :year],
+    start_year: Date.tomorrow.year,
+    start_day: Date.tomorrow.day,
+    start_month: Date.tomorrow.month,
+    end_year: (Date.current + 1.year).year,
+    end_day: (Date.current + 1.year).day,
+    end_month: (Date.current + 1.year).month
+  } %>
+
+  <%= form.label :end_date, "End Date" %>
+  <%= form.date_select :end_date, {
+    order: [:day, :month, :year],
+    start_year: Date.tomorrow.year,
+    start_day: Date.tomorrow.day,
+    start_month: Date.tomorrow.month,
+    end_year: (Date.current + 1.year).year,
+    end_day: (Date.current + 1.year).day,
+    end_month: (Date.current + 1.year).month
+  } %>
+
+  <%= form.submit "Submit" %>
+<% end %>

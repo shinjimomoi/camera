@@ -11,7 +11,8 @@ class BookingsController < ApplicationController
 
     # GET /bookings/new
     def new
-      @booking = Booking.new
+      @camera = Camera.find(params[:camera_id])
+      @booking = @camera.bookings.build
     end
 
     # POST /bookings

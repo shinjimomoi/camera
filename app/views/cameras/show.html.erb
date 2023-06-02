@@ -9,4 +9,5 @@
     <%= form.submit 'Delete' %>
   <% end %>
 <% end %>
+<%= link_to "Book this camera", new_booking_path(camera_id: @camera.id), class: "btn btn-primary" %>
 <p><%= link_to 'Back', cameras_path %></p>
