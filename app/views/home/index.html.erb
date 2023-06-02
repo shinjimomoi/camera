@@ -1,15 +1,10 @@
-<h1>Cameras Home</h1>
-<div>
-  <% if user_signed_in? %>
-    <div id="react-container" data-data="<%= { message: @message, user: current_user}.to_json %>"></div>
-    <%= link_to 'Sign out', destroy_user_session_path, method: :delete %>
-  <% else %>
-    <h4> You're not signed in </h4>
-    <%= link_to 'Sign in', user_session_path, method: :post %>
-    <%= link_to 'Sign up', new_user_registration_path, method: :get %>
-  <% end %>
-    <h4> See the cameras anyway? </h4>
-  <%= link_to 'Cameras', cameras_path, method: :get %>
-</div>
+<h1>Cameras</h1>
 
-<%= javascript_pack_tag 'application' %>
+<div id="cameras-root"></div>
+
+<%= javascript_pack_tag 'index' %>
+
+<script>
+  const camerasData = <%= @cameras.to_json.html_safe %>;
+  const myCamerasData = <%= user_signed_in? ? @my_cameras.to_json.html_safe : 'null' %>;
+</script>

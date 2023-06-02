@@ -8,7 +8,6 @@ const MyComponent = () => {
   return (
     <div className='container'>
       <h2>{message}, {user.name}</h2>
-      <p>This is a test</p>
     </div>
   );
 };
