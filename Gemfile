@@ -33,6 +33,8 @@ gem "devise"
 
 gem 'react-rails'
 
+gem 'sassc-rails', '~> 2.0'
+
 gem 'webpacker'
 
 # Use Redis adapter to run Action Cable in production

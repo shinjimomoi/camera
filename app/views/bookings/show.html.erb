@@ -6,4 +6,5 @@
 <p><strong>Renter:</strong> <%= @booking.user.name %></p>
 <%= form_with(model: @booking, method: :delete, url: booking_path(@booking)) do |form| %>
     <%= form.submit 'Delete' %>
-  <% end %>
+<% end %>
+<%= link_to "More Cameras", root_path %>

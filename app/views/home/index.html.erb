@@ -7,8 +7,8 @@
 
   <% else %>
     <h4> You're not signed in </h4>
-    <%= link_to 'Sign in', user_session_path, method: :post %>
-    <%= link_to 'Sign up', new_user_registration_path, method: :get %>
+    <a href="#signin"><%= link_to 'Sign in', new_user_session_path %></a>
+    <a href="#signin"><%= link_to 'Sign up', new_user_registration_path %></a>
   <% end %>
     <table>
   <% @cameras.each do |camera| %>
