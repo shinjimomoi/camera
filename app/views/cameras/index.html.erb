@@ -1,31 +1,7 @@
-<h1>Cameras</h1>
-<table>
-  <thead>
-    <tr>
-      <th>Model</th>
-      <th>Year</th>
-      <th>Condition</th>
-      <th>Price</th>
-      <th></th>
-    </tr>
-  </thead>
-  <tbody>
+<h4>My Cameras</h4>
 
-      <h4>All Cameras</h4>
-    <% @cameras.each do |camera| %>
-      <tr>
-        <td><%= camera.model %></td>
-        <td><%= camera.year %></td>
-        <td><%= camera.condition %></td>
-        <td><%= camera.price %></td>
-        <td><%= link_to "View", camera %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-    <% if user_signed_in? %>
-    <table>
+<% if user_signed_in? %>
+  <table>
     <thead>
       <tr>
         <th>Model</th>
@@ -36,7 +12,6 @@
       </tr>
     </thead>
     <tbody>
-      <h4>My Cameras</h4>
       <% @my_cameras.each do |camera| %>
         <tr>
           <td><%= camera.model %></td>
@@ -46,7 +21,8 @@
           <td><%= link_to "View", camera %></td>
         </tr>
       <% end %>
-    <% end %>
-  </tbody>
-</table>
+    </tbody>
+  </table>
+<% end %>
 <%= link_to "Add Camera", new_camera_path %>
+<%= link_to "All Cameras", root_path %>
