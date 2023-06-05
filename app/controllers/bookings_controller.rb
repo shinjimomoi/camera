@@ -27,6 +27,13 @@ class BookingsController < ApplicationController
       end
     end
 
+    # DELETE /cameras/:id
+    def destroy
+      @booking = Booking.find(params[:id])
+      @booking.destroy
+      redirect_to cameras_url, notice: 'Camera was successfully destroyed.'
+    end
+
     private
 
     def booking_params

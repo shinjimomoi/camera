@@ -6,6 +6,7 @@
       <th>End Date</th>
       <th>Camera</th>
       <th>Renter</th>
+      <th>Owner</th>
       <th></th>
     </tr>
   </thead>
@@ -16,9 +17,10 @@
         <td><%= booking.end_date %></td>
         <td><%= booking.camera.model %></td>
         <td><%= booking.camera.user.name %></td>
+        <td><%= booking.user.name %></td>
         <td><%= link_to "View", booking %></td>
       </tr>
     <% end %>
   </tbody>
 </table>
-<%= link_to "Add Booking", new_booking_path %>
+<%= link_to "Find Cameras", root_path %>
